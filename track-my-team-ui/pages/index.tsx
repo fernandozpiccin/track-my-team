@@ -11,7 +11,7 @@ export async function getStaticProps({}) {
   return {
     props: {
       members: membersData,
-      lastUpdated: JSON.stringify(new Date())
+      lastUpdated: JSON.stringify(new Date()),
     },
     revalidate: 60,
   };
