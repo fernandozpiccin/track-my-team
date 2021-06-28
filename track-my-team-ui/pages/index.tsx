@@ -1,9 +1,9 @@
 import React from "react";
 import { TeamMember } from "../models/TeamMember";
-import Head from "next/head";
 import { Footer } from "../components/footer";
 import { Main } from "../components/main";
 import { MenuNav } from "../components/menu-nav";
+import { Header } from "../components/header";
 export async function getStaticProps({}) {
   const url: string | undefined = process.env.MEMBERS_API;
   const membersResponse = await fetch(url || "");
@@ -21,15 +21,13 @@ interface HomeProps {
   lastUpdated: string; // date has to be serialized to work with getStaticProps
 }
 
+const appName: string = "Track my team";
 export const Home: React.FC<HomeProps> = (props) => {
   return (
     <React.Fragment>
-      <Head>
-        <title>Track My Team</title>
-        <meta property="og:title" content="Track My Team" key="title" />
-      </Head>
+      <Header title={appName}></Header>
       <div>
-        <MenuNav></MenuNav>
+        <MenuNav appName={appName}></MenuNav>
         <Main members={props.members}></Main>
         <Footer lastUpdated={JSON.parse(props.lastUpdated)}></Footer>
       </div>
