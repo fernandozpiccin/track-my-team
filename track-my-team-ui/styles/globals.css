@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500&family=Julius+Sans+One&display=swap");
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #555151;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  height: 4rem;
+  vertical-align: middle;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  font-family: "Big Shoulders Stencil Display";
+}
+
+.header span {
+  align-items: center;
+  display: inline-flex;
+  vertical-align: middle;
+  min-height: 4rem;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  min-width: 15rem;
+  min-height: 15rem;
+  width: 15rem;
+  height: 15rem;
+  border: 1px solid #f1f1f1;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.content {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .flip-card {
+    min-width: 10rem;
+    min-height: 10rem;
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .flip-card {
+    min-width: 12rem;
+    min-height: 12rem;
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #c4c4c4;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  min-width: 70%;
+}
+
+.circle {
+  border-radius: 50%;
+  margin: 10%;
+  width: 55%;
+  height: 55%;
+  background-color: rebeccapurple;
+}
+.circle span {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: black;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  min-height: 100%;
+  text-transform: uppercase;
+  font-family: "Julius Sans One";
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back h2 {
+  flex-basis: 100%;
+  font-size: 1rem;
+}
+.flip-card-back p {
+  flex-basis: 100%;
+  font-size: 0.9rem;
+}
+.flip-card-back svg {
+  font-size: 3rem;
+}
+.flip-card-back :last-child {
+  margin-bottom: 10px;
+}
+.flip-card-back.still-in {
+  color: white;
+  background-color: green;
+}
+.flip-card-back.notice {
+  color: black;
+  background-color: rgb(253, 173, 24);
+}
+.flip-card-back.left {
+  color: white;
+  background-color: rgb(163, 0, 0);
+}
