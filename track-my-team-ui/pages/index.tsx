@@ -1,9 +1,9 @@
 import React from "react";
 import { TeamMember } from "../models/TeamMember";
-import { MemberCardList } from "../components/members/member-card-list";
-import { Header } from "../components/header";
 import Head from "next/head";
 import { Footer } from "../components/footer";
+import { Main } from "../components/main";
+import { MenuNav } from "../components/menu-nav";
 export async function getStaticProps({}) {
   const url: string | undefined = process.env.MEMBERS_API;
   const membersResponse = await fetch(url || "");
@@ -29,10 +29,8 @@ export const Home: React.FC<HomeProps> = (props) => {
         <meta property="og:title" content="Track My Team" key="title" />
       </Head>
       <div>
-        <Header></Header>
-        <div className="content">
-          <MemberCardList members={props.members}></MemberCardList>
-        </div>
+        <MenuNav></MenuNav>
+        <Main members={props.members}></Main>
         <Footer lastUpdated={JSON.parse(props.lastUpdated)}></Footer>
       </div>
     </React.Fragment>
