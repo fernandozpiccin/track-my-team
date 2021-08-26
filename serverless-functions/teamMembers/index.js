@@ -1,7 +1,7 @@
 var members = [
   {
     initials: "FP",
-    jobTitle: "Front-End Developer",
+    jobTitle: "Front-End Developer - Test",
     category: "notice",
   },
   {
