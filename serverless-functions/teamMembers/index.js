@@ -2,7 +2,7 @@ var members = [
   {
     initials: "FP",
     jobTitle: "Front-End Developer",
-    category: "still-in",
+    category: "notice",
   },
   {
     initials: "ML",
